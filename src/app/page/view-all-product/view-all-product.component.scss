@@ -1,0 +1,58 @@
+.card-title, .card-des, .card-price{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30ch;
+  }
+  .mat-card{
+    padding: 0px;
+    overflow: hidden;
+  }
+  .dashboard-card {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+  .view-content{
+    position: absolute;
+      z-index: 1;
+      text-align: center;
+      width: 86%;
+      transition: 0.5s ease-in-out;
+      visibility: hidden;
+      padding: 12px 18px;
+      border-radius: 12px 12px 0px 0px;
+      h2{
+        font-weight: 300;
+  
+      }
+  }
+  .dashboard-card:hover .view-content{
+    color: #795548;
+    background: #f8bbd0e8;
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+
+  .example-form-field {
+    width: 100%;
+  }
+.mat-input-element{
+    background: #ffffff00 !important;
+    padding: 10px;
+  }
+ ::ng-deep .mat-form-field-appearance-fill .mat-form-field-infix {
+    padding: 1.25em 0 0.75em 0 !important;
+}
+
+
+
+
+
+
+
+
+
+

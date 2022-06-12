@@ -1,0 +1,118 @@
+.mat-toolbar{
+    background: transparent ;
+}
+.top-toolbar{
+    background-color: #da4271 !important;
+    height: 40px;
+    margin-bottom: 20px;
+    position:fixed;
+    top: 0;
+    z-index: 100;
+    .left-content{
+        display: inline-flex;
+        button{
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 0 16px;
+        }
+    }
+    .right-content{
+        display: inline-flex;
+        .top-btn{
+            color: #fff;
+        }
+    }
+    .menu-btn{
+        display: none;
+    }
+}
+
+.bg{
+    position: fixed;
+    width: 100%;
+    top: 40px;
+    z-index: 100;
+    background: #ffffffe6;
+    .toolbar{
+        height: 82px;
+        transition: 0.3s ease-in-out;
+    
+        .logo{
+            position: relative;
+            display: inline-block;
+            width: 150px;
+            overflow: hidden;
+            .logo-img{
+                width: 100%;
+            }
+        }
+        .nav-list{
+            padding: 0;
+            margin-left: auto;
+            margin-right: auto;
+            .nav-item{
+                font-size: 14px;
+                font-weight: 400;
+                margin: 10px 0px;
+                text-transform: uppercase;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: 0.3s ease-in-out;
+            }
+            
+        }
+    }
+}
+::ng-deep .mat-list-base .mat-list-item{
+    display: inline-block !important;
+    width: unset!important;
+}
+::ng-deep .mat-list-base .mat-list-item:focus{
+    background: #da4271;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+
+@media (max-width: 959px){
+    .toolbar{
+        display: inline-block;
+        position: fixed;
+        left: 0;
+        width: 270px;
+        height: 100% !important;
+        z-index: 100;
+        background: #ffffffeb;
+        .nav-list{
+            display: grid;
+            .nav-item{
+                display: block;
+                color: #0c0c0c;
+            }
+        }
+    }
+    .menuClass{
+        left: 0;
+        transform: translateX(-100%);
+        transition: 0.3s ease-in-out;
+    }
+    
+
+    .top-toolbar{
+        .left-content{
+            display: none !important;
+        }
+        .rigth-content{
+            position: absolute !important;
+            right: 0;
+        }
+        .menu-btn{
+            display: block !important;
+        }
+    }
+    .example-spacer {
+        flex: 1 1 1 auto !important;
+    }
+    
+}

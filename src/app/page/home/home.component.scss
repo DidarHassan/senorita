@@ -1,0 +1,56 @@
+.grid-container {
+  margin: 20px;
+}
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+.mat-card{
+  padding: 0px;
+  overflow: hidden;
+}
+.tab-content{
+  position: absolute;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s ease-in-out;
+    visibility: hidden;
+    border-radius: 12px 12px 0px 0px;
+    h2{
+      font-weight: 300;
+
+    }
+}
+.dashboard-card:hover .tab-content{
+  color: #795548;
+  background: #f8bbd0e8;
+  visibility: visible;
+  transform: translateY(-100%);
+}
+.card-title, .card-des, .card-price{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 30ch;
+}
+
+::ng-deep .mat-tab-label:focus:not(.mat-tab-disabled) {
+  opacity: 1;
+  background: #da4271 !important;
+  color: #ffff!important;
+  border-radius: 10px 10px 0px 0px!important;
+}
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar{
+  background-color: #da4271!important;
+}
+
+@media (max-width: 959px){
+  .top-banner{
+    position: relative;
+    top: 40px;
+  }
+}

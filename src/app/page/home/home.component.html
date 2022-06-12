@@ -1,0 +1,194 @@
+<!-- grid-images -->
+  <div class="container top-banner">
+    <div class="grid-container">
+      <mat-grid-list cols="4" rowHeight="270px">
+        <mat-grid-tile *ngFor="let card of topCards | async" [colspan]="card.cols" [rowspan]="card.rows">
+          <mat-card class="dashboard-card">
+            <img style="width: 100% ; height: -webkit-fill-available;" src="{{card.imageSrc}}" alt="">
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+  
+<!-- tabs -->
+  <div class="container">
+    <div class="tabs" >
+      <mat-tab-group mat-align-tabs="center" class="tabs-group">
+        <mat-tab class="tab-1" label="Mens Fashion" class="tab" >
+          <div class="grid-container" >
+            <mat-grid-list cols="4" rowHeight="270px">
+              <div class="container"  *ngFor="let homeProducts of AllProduct | filter: 'Mens':'category'">
+                <mat-grid-tile *ngFor="let tab of tabs | async" [colspan]="tab.cols" [rowspan]="tab.rows" >
+                  <mat-card class="dashboard-card">
+                    <img style="width: 100% ; height: -webkit-fill-available;"  class="card-image" src="{{homeProducts.image}}" alt="">
+                      <div class="view-content">
+                          <mat-card-content >
+                              <h5 class="card-title">{{homeProducts.title}}</h5>
+                              <p class="card-des">{{homeProducts.description}}</p>
+                              <p class="card-price"><strong>Price: ${{homeProducts.price}}</strong></p>
+                          </mat-card-content>
+                          <mat-card-actions>
+                              <button mat-button class="button-1" (click)="addtoCart(homeProducts)">
+                                  <mat-icon>add_shopping_cart</mat-icon>Cart
+                              </button>
+                          </mat-card-actions>
+                      </div>
+                  </mat-card>
+                </mat-grid-tile>
+              </div>
+            </mat-grid-list>
+          </div>
+        </mat-tab>
+        <mat-tab class="tab-1" label="Womens Fashion " >
+          <div class="grid-container" >
+            <mat-grid-list cols="4" rowHeight="270px">
+              <div class="container"  *ngFor="let homeProducts of AllProduct | filter: 'woMens':'category'">
+                <mat-grid-tile *ngFor="let tab of tabs | async" [colspan]="tab.cols" [rowspan]="tab.rows" >
+                  <mat-card class="dashboard-card">
+                    <img style="width: 100% ; height: -webkit-fill-available;"  class="card-image" src="{{homeProducts.image}}" alt="">
+                      <div class="view-content">
+                          <mat-card-content >
+                              <h5 class="card-title">{{homeProducts.title}}</h5>
+                              <p class="card-des">{{homeProducts.description}}</p>
+                              <p class="card-price"><strong>Price: ${{homeProducts.price}}</strong></p>
+                          </mat-card-content>
+                          <mat-card-actions>
+                              <button mat-button class="button-1" (click)="addtoCart(homeProducts)">
+                                  <mat-icon>add_shopping_cart</mat-icon>Cart
+                              </button>
+                          </mat-card-actions>
+                      </div>
+                  </mat-card>
+                </mat-grid-tile>
+              </div>
+            </mat-grid-list>
+          </div>
+        </mat-tab>
+        <mat-tab class="tab-1" label="Woman Jewelry accessories" >
+          <div class="grid-container" >
+            <mat-grid-list cols="4" rowHeight="270px">
+              <div class="container"  *ngFor="let homeProducts of AllProduct | filter: 'Jewelry':'category'">
+                <mat-grid-tile *ngFor="let tab of tabs | async" [colspan]="tab.cols" [rowspan]="tab.rows" >
+                  <mat-card class="dashboard-card">
+                    <img style="width: 100% ; height: -webkit-fill-available;"  class="card-image" src="{{homeProducts.image}}" alt="">
+                      <div class="view-content">
+                          <mat-card-content >
+                              <h5 class="card-title">{{homeProducts.title}}</h5>
+                              <p class="card-des">{{homeProducts.description}}</p>
+                              <p class="card-price"><strong>Price: ${{homeProducts.price}}</strong></p>
+                          </mat-card-content>
+                          <mat-card-actions>
+                              <button mat-button class="button-1" (click)="addtoCart(homeProducts)">
+                                  <mat-icon>add_shopping_cart</mat-icon>Cart
+                              </button>
+                          </mat-card-actions>
+                      </div>
+                  </mat-card>
+                </mat-grid-tile>
+              </div>
+            </mat-grid-list>
+          </div>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
+    <div class="view-btn">
+      <button routerLink="/viewAllProduct" mat-raised-button class="button-2">View all</button>
+    </div>
+  </div>
+
+<!-- banner-01 -->
+  <div class="banner1 mY-20">
+    <div class="title container">
+      <h1 style="font-size: 35px;
+      font-weight: 300;">Frangrance</h1>
+    </div>
+    <img style="width: 100%;" src="assets/fragrance.jpg" alt="">
+  </div>
+
+<!-- slider -->
+  <div class="container" >
+    <h1>Fragrances | Luxury Perfumes || Senorita</h1>
+    <owl-carousel-o [options]="customOptions">
+      <ng-container>
+        <!-- slider-items -->
+        <ng-template carouselSlide *ngFor="let homeProducts of AllProduct | filter: 'fragrance':'category'">
+          <mat-grid-list cols="4" rowHeight="250px">
+            <mat-grid-tile *ngFor="let slider of sliders | async" [colspan]="slider.cols" [rowspan]="slider.rows">
+              <mat-card class="dashboard-card">
+                <img style="width: 100% ; height: -webkit-fill-available;"  class="card-image" src="{{homeProducts.image}}" alt="">
+                  <div class="view-content">
+                      <mat-card-content >
+                          <h5 class="card-title">{{homeProducts.title}}</h5>
+                          <p class="card-des">{{homeProducts.description}}</p>
+                          <p class="card-price"><strong>Price: ${{homeProducts.price}}</strong></p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                          <button mat-button class="button-1" (click)="addtoCart(homeProducts)">
+                              <mat-icon>add_shopping_cart</mat-icon>Add To Cart
+                          </button>
+                      </mat-card-actions>
+                  </div>
+              </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </ng-template>
+      <!-- slider-items -->
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+
+<!-- banner-02 -->
+  <div class="banner2 mY-20">
+    <div class="title container">
+      <h1 style="font-size: 35px;
+      font-weight: 300;">Accessories</h1>
+    </div>
+    <img style="width: 100%;" src="assets/banner-02.jpg" alt="">
+  </div>
+
+  <!-- grid-slider -->
+  <div class="container">
+    <h1>Groovy Girls | Gift | Accessories || Senorita</h1>
+    <owl-carousel-o [options]="customOptions2">
+      <ng-container>
+        <!-- slider-items -->
+        <ng-template carouselSlide *ngFor="let homeProducts of AllProduct | filter: 'womanAccessories':'category'">
+          <mat-grid-list cols="4" rowHeight="250px">
+            <mat-grid-tile *ngFor="let gridSlider of gridSliders | async" [colspan]="gridSlider.cols" [rowspan]="gridSlider.rows">
+              <mat-card class="dashboard-card">
+                <img style="width: 100% ; height: -webkit-fill-available;"  class="card-image" src="{{homeProducts.image}}" alt="">
+                  <div class="view-content">
+                      <mat-card-content >
+                          <h5 class="card-title">{{homeProducts.title}}</h5>
+                          <p class="card-des">{{homeProducts.description}}</p>
+                          <p class="card-price"><strong>Price: ${{homeProducts.price}}</strong></p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                          <button mat-button class="button-1" (click)="addtoCart(homeProducts)">
+                              <mat-icon>add_shopping_cart</mat-icon>Add To Cart
+                          </button>
+                      </mat-card-actions>
+                  </div>
+              </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </ng-template>
+      <!-- slider-items -->
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+
+  <!-- banner-01 -->
+  <div class="banner3 mY-20">
+
+    <div class="title container">
+      <h1 style="font-size: 35px;
+      font-weight: 300;">New Collection</h1>
+    </div>
+    <img style="width: 100%;" src="assets/d-banner.jpg" alt="">
+  </div>
+
+  <!-- <footer> -->
+  <app-footer></app-footer>

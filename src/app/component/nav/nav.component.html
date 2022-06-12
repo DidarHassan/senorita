@@ -1,0 +1,58 @@
+<header>
+  <mat-toolbar class="top-toolbar">
+    <button
+        type="button" class="menu-btn"
+        mat-icon-button
+        (click)="openMenu()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">list</mat-icon>
+    </button>
+    <div class="left-content">
+      <button mat-button class="top-btn">
+        <mat-icon class="topbar-icon" mat-list-icon>call</mat-icon>
+        Call us: 017xxxxxxxx</button>
+        <button mat-button class="top-btn">
+          <mat-icon class="topbar-icon" mat-list-icon>alternate_email</mat-icon>
+          Text us: info@fashionaccessories.com</button>
+    </div>
+    <span class="example-spacer"></span>
+    <div class="right-content">
+      <button mat-button class="top-btn">
+        <mat-icon class="topbar-icon" mat-list-icon>man</mat-icon>
+        Register</button>
+      <button mat-button class="top-btn">
+        <mat-icon class="topbar-icon" mat-list-icon>login</mat-icon>
+        Login</button>
+    </div>
+  </mat-toolbar>
+  <div class="bg">
+    <div class="container">
+      <mat-toolbar class="toolbar navbar" [class.menuClass]="mobileMenu"
+      >
+        <div class="logo">
+            <img routerLink="/home" class="logo-img" src="assets/logo.png" alt="">
+        </div>
+        <mat-nav-list class="nav-list">
+          <a mat-list-item [routerLink]="['/home']" [routerLinkActive]="['active']" class="nav-item">Home</a>
+          <a mat-list-item [routerLink]="['/home']" [routerLinkActive]="['active']" class="nav-item">beauty and personal care</a>
+          <a mat-list-item [routerLink]="['/home']" [routerLinkActive]="['active']" class="nav-item">contact us</a>
+          <a mat-list-item [routerLink]="['/home']" [routerLinkActive]="['active']" class="nav-item">about us</a>
+        </mat-nav-list>
+  
+        <div class="icon-btn-group">
+          <button routerLink="/viewAllProduct" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a heart icon">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-icon-button (click)="openDialog()"  matBadge="{{totalItemBadge}}" color="primary" aria-label="Example icon button with a heart icon">
+            <mat-icon>add_shopping_cart</mat-icon>
+          </button>
+        </div>
+      </mat-toolbar>
+    </div>
+  </div>
+  
+</header>
+

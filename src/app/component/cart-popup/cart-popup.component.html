@@ -1,0 +1,44 @@
+
+<mat-dialog-actions align="end">
+    <button  mat-button mat-dialog-close mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-dialog-actions>
+  <h2 mat-dialog-title>YOUR CART</h2>
+<mat-dialog-content class="mat-typography" >
+  <ng-container *ngIf="addProducts.length ==0">
+    <div class="emptyCart mY-20" style="text-align: center;">
+      <h1>Empty Cart</h1>
+      <div class="empty">
+        <img style="width: 100% ; height: 200px ;" src="assets/emptyCart.png">
+      </div>
+      <button routerLink="/home" mat-dialog-close mat-button class="button-2">Shop Now</button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="addProducts.length !=0" class="cartItem">
+    <div class="container" >
+      <mat-card class="example-card" *ngFor="let cartItem of addProducts; let i = index">
+        <mat-card-title-group >
+          <img mat-card-lg-image src="{{cartItem.image}}">
+          <mat-card-title>{{cartItem.title}}</mat-card-title>
+          <mat-card-subtitle>{{cartItem.description}}</mat-card-subtitle>
+          <mat-card-subtitle><strong>Price:</strong>${{cartItem.price}}</mat-card-subtitle>
+          <mat-card-subtitle>{{cartItem.quantity}}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <button (click)="removeItem(cartItem)"  mat-raised-button color="warn">Remove</button>
+        </mat-card-content>
+      </mat-card>
+    
+      
+        
+        <mat-dialog-actions class="cartBtnG mY-20">
+          <button (click)="emptyCart()" mat-button class="button-2">Empty Cart</button>
+          <span><Strong>SUBTOTAL ${{grandTotal}}</Strong></span>
+          <button mat-raised-button color="accent">CHECKOUT</button>
+        </mat-dialog-actions>
+     </div>
+  </ng-container>
+
+</mat-dialog-content>
+

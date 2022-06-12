@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@media (min-width: 768px){
+    .container {
+        max-width: 720px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+@media (min-width: 992px){
+    .container {
+        max-width: 960px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+}
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1140px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    app-home , app-view-all-product{
+        position: relative;
+        top: 110px;
+    }
+}
+@media (min-width: 1400px){
+    .container {
+        max-width: 1270px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    app-home , app-view-all-product{
+        position: relative;
+        top: 110px;
+    }
+}
+
+
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+.mY-20{
+    margin: 20px 0px;
+}
+  .button-1{
+    background-color: #da4271;
+    color: white;
+    padding: 0px 24px;
+    transition: 0.3s ease-in-out;
+}
+.button-1:hover{
+    background-color: #71D1D1;
+    color: white;
+}
+.button-1:hover{
+    background: #71D1D1;
+    color: #ffffff;
+    transform: scaleX(1.1);
+    transition: 0.3s ease-in-out;
+}
+.button-2{
+    background: transparent;
+    border: 1px solid #da4271 !important;
+    color: #da4271;
+    padding: 0px 24px;
+    transition: 0.3s ease-in-out;
+}
+.button-2:hover{
+    background: #71D1D1;
+    border: 1px solid #71D1D1 !important;
+    color: #ffffff;
+    transform: scaleX(1.1);
+    transition: 0.3s ease-in-out;
+}
+.view-btn{
+    margin-left: auto;
+    display: table;
+}
+
+.view-content{
+    position: absolute;
+      z-index: 1;
+      text-align: center;
+      width: 86%;
+      transition: 0.5s ease-in-out;
+      visibility: hidden;
+      padding: 12px 18px;
+      border-radius: 12px 12px 0px 0px;
+      h2{
+        font-weight: 300;
+  
+      }
+  }
+  .dashboard-card:hover .view-content{
+    color: #795548;
+    background: #f8bbd0e8;
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+
+
+
+
+
+
+
+
+
+
+
+

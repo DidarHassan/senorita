@@ -1,0 +1,35 @@
+<div class="container">
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Search Product</mat-label>
+    <input matInput type="text" [(ngModel)]="value" [(ngModel)]="searchTerm" (keyup)="search($event)">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="container">
+    <mat-grid-list cols="4" rowHeight="300px">
+        <!-- grid-tile -->
+        <div class="container" *ngFor="let card of searchProduct | search: searchKey:'description'||'title'">
+          <mat-grid-tile *ngFor="let item of viewProduct | async" [colspan]="item.cols" [rowspan]="item.rows">
+            <mat-card class="dashboard-card">
+              <img style="width: 100% ; height: -webkit-fill-available;"  class="card-image" src="{{card.image}}" alt="">
+                <div class="view-content">
+                    <mat-card-content >
+                        <h5 class="card-title">{{card.title}}</h5>
+                        <p class="card-des">{{card.description}}</p>
+                        <p class="card-price"><strong>Price: ${{card.price}}</strong></p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button class="button-1" (click)="addtoCart(card)">
+                            <mat-icon>add_shopping_cart</mat-icon>Cart
+                        </button>
+                    </mat-card-actions>
+                </div>
+            </mat-card>
+          </mat-grid-tile>
+        </div>
+        
+    </mat-grid-list>
+</div>

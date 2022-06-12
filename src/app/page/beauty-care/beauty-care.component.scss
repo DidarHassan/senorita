@@ -1,0 +1,9 @@
+.tabs{
+    display: flex;
+    .tabList{
+        padding: 5px 12px;
+        margin: 10px;
+        list-style-type: none;
+        cursor: pointer;
+    }
+}
